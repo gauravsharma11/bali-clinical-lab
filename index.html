@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bali Clinical Laboratory — Metropolis | Book Tests &amp; Health Checkups in Jalandhar</title>
+<meta name="description" content="Bali Clinical Laboratory, Jalandhar — Metropolis Healthcare associate lab. Book diagnostic tests and health checkup packages online, with home sample collection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+Devanagari:wght@500;600;700&family=Noto+Sans+Gurmukhi:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-lang="en">
+<div id="scrollProgress"></div>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="#home" class="brand">
+      <span class="brand-mark">BC</span>
+      <span>
+        <span lang-block data-lang="en" class="active-lang">Bali Clinical Laboratory<small>Metropolis Associate Lab, Jalandhar</small></span>
+        <span lang-block data-lang="hi">बाली क्लिनिकल लेबोरेटरी<small>मेट्रोपोलिस एसोसिएट लैब, जालंधर</small></span>
+        <span lang-block data-lang="pa">ਬਾਲੀ ਕਲੀਨਿਕਲ ਲੈਬੋਰੇਟਰੀ<small>ਮੈਟਰੋਪੋਲਿਸ ਐਸੋਸੀਏਟ ਲੈਬ, ਜਲੰਧਰ</small></span>
+      </span>
+    </a>
+    <nav>
+      <ul id="desktopNav">
+        <li><a href="#packages" lang-block data-lang="en" class="active-lang">Health Packages</a><a href="#packages" lang-block data-lang="hi">हेल्थ पैकेज</a><a href="#packages" lang-block data-lang="pa">ਹੈਲਥ ਪੈਕੇਜ</a></li>
+        <li><a href="#catalog" lang-block data-lang="en" class="active-lang">Individual Tests</a><a href="#catalog" lang-block data-lang="hi">व्यक्तिगत टेस्ट</a><a href="#catalog" lang-block data-lang="pa">ਵਿਅਕਤੀਗਤ ਟੈਸਟ</a></li>
+        <li><a href="#how" lang-block data-lang="en" class="active-lang">How It Works</a><a href="#how" lang-block data-lang="hi">कैसे काम करता है</a><a href="#how" lang-block data-lang="pa">ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ</a></li>
+        <li><a href="#contact" lang-block data-lang="en" class="active-lang">Contact</a><a href="#contact" lang-block data-lang="hi">संपर्क करें</a><a href="#contact" lang-block data-lang="pa">ਸੰਪਰਕ ਕਰੋ</a></li>
+        <li><a href="#" id="staffLink" style="color:var(--muted);">Staff View</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch" id="langSwitch">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="hi">हिं</button>
+        <button data-lang="pa">ਪੰ</button>
+      </div>
+      <button class="icon-btn" id="themeToggle" title="Toggle dark mode">🌙</button>
+      <span class="phone-chip">📞 +91 98XXX-XXXXX</span>
+      <button class="btn btn-primary btn-small" onclick="openBookingModal()">
+        <span lang-block data-lang="en" class="active-lang">Book a Test</span>
+        <span lang-block data-lang="hi">टेस्ट बुक करें</span>
+        <span lang-block data-lang="pa">ਟੈਸਟ ਬੁੱਕ ਕਰੋ</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#packages">Health Packages / हेल्थ पैकेज / ਹੈਲਥ ਪੈਕੇਜ</a>
+    <a href="#catalog">Individual Tests / व्यक्तिगत टेस्ट / ਵਿਅਕਤੀਗਤ ਟੈਸਟ</a>
+    <a href="#how">How It Works / कैसे काम करता है / ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ</a>
+    <a href="#contact">Contact / संपर्क करें / ਸੰਪਰਕ ਕਰੋ</a>
+    <a href="#" id="staffLinkMobile">Staff View (Demo)</a>
+  </div>
+</header>
+
+<main id="home">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow-line">Metropolis Healthcare Associate Lab · Jalandhar</div>
+        <h1>
+          <span lang-block data-lang="en" class="active-lang">Reliable diagnostics, booked in minutes — <em>at home</em> or at the lab.</span>
+          <span lang-block data-lang="hi">भरोसेमंद जांच, मिनटों में बुक करें — घर बैठे या लैब आकर।</span>
+          <span lang-block data-lang="pa">ਭਰੋਸੇਮੰਦ ਜਾਂਚ, ਮਿੰਟਾਂ ਵਿੱਚ ਬੁੱਕ ਕਰੋ — ਘਰ ਬੈਠੇ ਜਾਂ ਲੈਬ ਆ ਕੇ।</span>
+        </h1>
+        <p class="lead">
+          <span lang-block data-lang="en" class="active-lang">Bali Clinical Laboratory, Jalandhar, offers individual tests and curated health checkup packages — with home sample collection and clear, on-time reporting.</span>
+          <span lang-block data-lang="hi">बाली क्लिनिकल लेबोरेटरी, जालंधर, व्यक्तिगत टेस्ट और खास हेल्थ चेकअप पैकेज उपलब्ध कराती है — घर से सैंपल कलेक्शन और समय पर रिपोर्ट के साथ।</span>
+          <span lang-block data-lang="pa">ਬਾਲੀ ਕਲੀਨਿਕਲ ਲੈਬੋਰੇਟਰੀ, ਜਲੰਧਰ, ਵਿਅਕਤੀਗਤ ਟੈਸਟ ਅਤੇ ਖਾਸ ਹੈਲਥ ਚੈੱਕਅੱਪ ਪੈਕੇਜ ਦਿੰਦੀ ਹੈ — ਘਰੋਂ ਸੈਂਪਲ ਕਲੈਕਸ਼ਨ ਅਤੇ ਸਮੇਂ ਸਿਰ ਰਿਪੋਰਟ ਨਾਲ।</span>
+        </p>
+        <div class="doorstep-tag">
+          <span class="ic">🏠</span>
+          <span lang-block data-lang="en" class="active-lang"><strong>We come to your doorstep</strong> for sample collection — no hassle, no travel.</span>
+          <span lang-block data-lang="hi"><strong>हम आपके घर आते हैं</strong> सैंपल कलेक्शन के लिए — कोई झंझट नहीं, कहीं जाना नहीं।</span>
+          <span lang-block data-lang="pa"><strong>ਅਸੀਂ ਤੁਹਾਡੇ ਘਰ ਆਉਂਦੇ ਹਾਂ</strong> ਸੈਂਪਲ ਕਲੈਕਸ਼ਨ ਲਈ — ਕੋਈ ਝੰਜਟ ਨਹੀਂ, ਕਿਤੇ ਜਾਣਾ ਨਹੀਂ।</span>
+        </div>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="document.getElementById('packages').scrollIntoView()">View Health Packages</button>
+          <button class="btn btn-outline" onclick="document.getElementById('catalog').scrollIntoView()">Search Individual Tests</button>
+        </div>
+      </div>
+      <div class="bento">
+        <div class="bento-card"><div class="stat" data-count="6" data-suffix="+">0+</div><div class="stat-label">Years serving Jalandhar families</div></div>
+        <div class="bento-card"><div class="stat" data-count="100" data-suffix="%">0%</div><div class="stat-label">Metropolis-accredited processing</div></div>
+        <div class="bento-card wide"><div class="stat" data-count="17" data-suffix="+">0+</div><div class="stat-label">Individual tests · 8 curated health packages</div></div>
+        <div class="bento-card search-card wide">
+          <h3>🔍 Find a test or package</h3>
+          <div class="search-row">
+            <input type="text" id="heroSearch" placeholder="e.g. Thyroid, HbA1c, Full Body Checkup">
+            <button id="heroSearchBtn">Search</button>
+          </div>
+          <div class="quick-tags">
+            <button onclick="quickSearch('Diabetes')">Diabetes</button>
+            <button onclick="quickSearch('Thyroid')">Thyroid</button>
+            <button onclick="quickSearch('Full Body')">Full Body</button>
+            <button onclick="quickSearch('Vitamin')">Vitamins</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="container">
+    <div class="trust-strip">
+      <div class="trust-grid">
+        <div class="trust-item"><div class="icon">🏥</div><h4>Metropolis Associate Lab</h4><p>Reports backed by accredited processing</p></div>
+        <div class="trust-item"><div class="icon">🩸</div><h4>Trained Phlebotomists</h4><p>Safe, hygienic sample collection</p></div>
+        <div class="trust-item"><div class="icon">🏠</div><h4>Home Collection</h4><p>Available across Jalandhar</p></div>
+        <div class="trust-item"><div class="icon">⏱️</div><h4>Clear Turnaround Times</h4><p>Know exactly when to expect results</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="reveal">
+    <div class="container">
+      <div class="stats-row">
+        <div><div class="num" data-count="17" data-suffix="+">0+</div><div class="lbl">Tests offered</div></div>
+        <div><div class="num" data-count="8" data-suffix="">0</div><div class="lbl">Curated packages</div></div>
+        <div><div class="num" data-count="24" data-suffix="hr">0hr</div><div class="lbl">Typical fast-track TAT</div></div>
+        <div><div class="num" data-count="6" data-suffix="+">0+</div><div class="lbl">Days a week open</div></div>
+      </div>
+      <p style="text-align:center;color:var(--muted);font-size:.76rem;margin-top:18px;">Illustrative placeholder figures for this prototype — replace with verified operational data before launch.</p>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Health Packages</span>
+        <h2>Curated checkups for common health goals</h2>
+        <p>Bundled panels designed around everyday health concerns — priced together, cheaper than booking each test separately.</p>
+      </div>
+      <div class="pkg-bento" id="pkgGrid"></div>
+    </div>
+  </section>
+
+  <!-- CATALOG -->
+  <section id="catalog" style="background:var(--surface);" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Individual Tests</span>
+        <h2>Browse the full test menu</h2>
+        <p>Search or filter by category, and add tests directly to your booking.</p>
+      </div>
+      <div class="catalog-toolbar">
+        <div class="filter-chips" id="filterChips"></div>
+        <div class="catalog-search">
+          <span class="ic">🔍</span>
+          <input type="text" id="catalogSearch" placeholder="Search tests...">
+        </div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="test-table">
+          <thead>
+            <tr><th>Test</th><th>Category</th><th>Sample &amp; Prep</th><th>TAT</th><th>Price</th><th></th></tr>
+          </thead>
+          <tbody id="testTableBody"></tbody>
+        </table>
+      </div>
+      <div class="empty-state" id="emptyState" style="display:none;">No tests match your search. Try a different keyword.</div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Process</span>
+        <h2>How booking works</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h4>Choose tests/package</h4><p>Pick individual tests or a health package that fits your need.</p></div>
+        <div class="step"><div class="num">2</div><h4>Pick a slot</h4><p>Choose home collection or an in-lab visit, on a date and time that works.</p></div>
+        <div class="step"><div class="num">3</div><h4>Sample collection</h4><p>A trained phlebotomist collects your sample, at home or at the lab.</p></div>
+        <div class="step"><div class="num">4</div><h4>Get your report</h4><p>Receive a notification once your report is ready, within the stated turnaround time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" style="background:var(--surface);" class="reveal">
+    <div class="container two-col">
+      <div>
+        <span class="eyebrow">Why Bali Clinical Laboratory</span>
+        <h2>Neighbourhood lab, dependable reporting</h2>
+        <ul class="why-list">
+          <li><span class="ic">🎯</span><div><h4>Accredited processing</h4><p>Samples processed under Metropolis Healthcare's quality framework.</p></div></li>
+          <li><span class="ic">🧑‍⚕️</span><div><h4>Experienced technician-led lab</h4><p>Run directly by a qualified lab professional in Jalandhar, not a call-centre franchise.</p></div></li>
+          <li><span class="ic">🕒</span><div><h4>Transparent turnaround</h4><p>Every test lists an expected reporting time upfront — no guessing.</p></div></li>
+          <li><span class="ic">💬</span><div><h4>Personal follow-up</h4><p>Direct contact with the lab for questions about your report, not a ticket queue.</p></div></li>
+        </ul>
+      </div>
+      <div class="quote-card">
+        <p>"Booked my mother's full body checkup online and someone came home to collect the sample the next morning. Report came in exactly when they said it would."</p>
+        <div class="who">— Sample patient testimonial (placeholder — replace with real reviews at launch)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL MARQUEE -->
+  <section class="reveal" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:28px;">
+        <span class="eyebrow">Placeholder Testimonials</span>
+        <h2 style="font-size:1.5rem;">What patients are expected to say</h2>
+        <p style="font-size:.82rem;">Illustrative only — swap for verified, consented patient reviews before launch.</p>
+      </div>
+    </div>
+    <div class="marquee-wrap">
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <div class="container two-col">
+      <div>
+        <span class="eyebrow">Visit / Contact</span>
+        <h2>Get in touch</h2>
+        <p style="color:var(--muted);">Have a question before booking? Reach out directly.</p>
+        <div class="contact-card">
+          <div class="row"><span class="ic">📍</span><span>Shop No. 3, Golden Ave Phase 2, Choti Baradari Part 2, Choti Baradari, Jalandhar, Punjab 144005, India</span></div>
+          <div class="row"><span class="ic">📞</span><span>+91 98XXX-XXXXX &nbsp;|&nbsp; 💬 WhatsApp available</span></div>
+          <div class="row"><span class="ic">✉️</span><span>contact@baliclinicallab.example</span></div>
+          <div class="row"><span class="ic">🕒</span><span>Mon–Sat, 7:00 AM – 8:00 PM</span></div>
+        </div>
+        <button class="btn btn-ghost" style="margin-top:18px;" onclick="openBookingModal()">Book an Appointment</button>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps?q=31.3012486,75.593111&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Bali Clinical Laboratory location map"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>Bali Clinical Laboratory</h4>
+      <p style="color:#9AA5B1;font-size:.85rem;max-width:300px;">Diagnostic tests and health checkup packages, with home sample collection in Jalandhar. Reports processed under Metropolis Healthcare accreditation.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul><li><a href="#packages">Health Packages</a></li><li><a href="#catalog">Individual Tests</a></li><li><a href="#how">How it Works</a></li></ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul><li><a href="#why">Why Us</a></li><li><a href="#contact">Contact</a></li><li><a href="#" id="staffLink2">Staff View (Demo)</a></li></ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul><li>Shop No. 3, Golden Ave Phase 2, Choti Baradari, Jalandhar, PB 144005</li><li>+91 98XXX-XXXXX</li><li>Mon–Sat, 7 AM – 8 PM</li></ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="disclaimer-box">
+      ⚠️ <strong>Prototype notice:</strong> This is a Phase-1 demo built for internal review, not a live production site. Prices, test lists, statistics, and testimonials shown are placeholders and must be verified/replaced before launch. No real payments or patient data are processed here.
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Bali Clinical Laboratory. All rights reserved.</span>
+      <span>Prototype v0.3 — Phase 1 (Catalog + Booking, no payment/report integration yet)</span>
+    </div>
+  </div>
+</footer>
+
+<div class="booking-bar" id="bookingBar">
+  <div class="container inner">
+    <div class="info"><strong id="barCount">0 items</strong><span id="barTotal">₹0 estimated</span></div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-outline btn-small" onclick="clearSelection()" style="color:#fff;border-color:rgba(255,255,255,.5);">Clear</button>
+      <button class="btn btn-primary btn-small" onclick="openBookingModal()">Proceed to Book</button>
+    </div>
+  </div>
+</div>
+
+<a class="wa-float" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" title="Chat on WhatsApp">💬</a>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div id="staffView">
+  <section style="padding-top:110px;">
+    <div class="container">
+      <div class="staff-toolbar">
+        <div>
+          <span class="eyebrow">Internal Demo</span>
+          <h2 style="margin-bottom:2px;">Staff Booking View</h2>
+          <p style="color:var(--muted);margin:0;">Illustrative admin panel — bookings submitted through this prototype (stored locally in this browser only).</p>
+        </div>
+        <button class="btn btn-ghost btn-small" id="closeStaffBtn">← Back to Website</button>
+      </div>
+      <div class="staff-table-wrap">
+        <table class="test-table" id="staffTable">
+          <thead><tr><th>Booking ID</th><th>Patient</th><th>Items</th><th>Mode</th><th>Slot</th><th>Status</th></tr></thead>
+          <tbody id="staffTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="app.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const TESTIMONIALS = [
+  {q:"Booked my mother's checkup online, phlebotomist came home next morning. Very smooth.", w:"— R. Sharma, Choti Baradari"},
+  {q:"Report was ready exactly when they said it would be. No follow-up calls needed.", w:"— A. Kapoor, Urban Estate"},
+  {q:"Liked that prices were listed upfront before booking — no surprises at the lab.", w:"— S. Bali, Model Town"},
+  {q:"Easy to book a diabetes panel for my father without visiting in person.", w:"— N. Chawla, Jalandhar Cantt"},
+  {q:"Appreciated the clear fasting instructions sent before the appointment.", w:"— P. Verma, Guru Nanak Mission Chowk"},
+];
+const track = document.getElementById('marqueeTrack');
+if(track){
+  const cards = [...TESTIMONIALS, ...TESTIMONIALS].map(t => `<div class="testi-card"><p>"${t.q}"</p><div class="who">${t.w}</div></div>`).join('');
+  track.innerHTML = cards;
+}
+</script>
+</body>
+</html>
