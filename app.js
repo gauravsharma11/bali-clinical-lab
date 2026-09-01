@@ -1,29 +1,48 @@
 /* ===========================================================
-   Bali Clinical Laboratory — Shared behavior
+   Bali Diagnostics — Shared behavior
    =========================================================== */
 
-/* ---------- Theme (dark/light) ---------- */
-function setTheme(theme){
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('bcl_theme', theme);
-  const btn = document.getElementById('themeToggle');
-  if(btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
-}
-(function initTheme(){
-  const saved = localStorage.getItem('bcl_theme');
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  setTheme(saved || (prefersDark ? 'dark' : 'light'));
-})();
-document.addEventListener('DOMContentLoaded', ()=>{
-  const btn = document.getElementById('themeToggle');
-  if(btn){
-    btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
-    btn.addEventListener('click', ()=>{
-      const cur = document.documentElement.getAttribute('data-theme');
-      setTheme(cur === 'dark' ? 'light' : 'dark');
-    });
+/* ---------- Booking notification config ----------
+   Web3Forms sends an instant email to the lab whenever a booking is submitted.
+   Get a free access key at https://web3forms.com (enter the lab's email).
+   Paste the key below. Until a real key is set, email sending is skipped
+   gracefully and the WhatsApp / on-screen confirmation still work. */
+const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+
+function sendBookingEmail(data) {
+  if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+    return Promise.resolve({ skipped: true });
   }
-});
+  const payload = {
+    access_key: WEB3FORMS_ACCESS_KEY,
+    subject: `New Booking ${data.id} — ${data.name}`,
+    from_name: 'Bali Diagnostics Website',
+    // Labelled fields so the email is easy to read:
+    'Booking ID': data.id,
+    Patient: `${data.name} (${data.age}, ${data.gender})`,
+    Phone: data.phone,
+    Email: data.email || '—',
+    'Collection Mode': data.mode === 'home' ? 'Home Collection' : 'Visit Lab',
+    Address: data.address || 'N/A',
+    'Preferred Date': data.date,
+    'Time Slot': data.slot,
+    Tests: data.items.join(', ') || 'To be advised',
+    'Estimated Total': `₹${data.total}`,
+    Notes: data.notes || '-',
+    'Submitted At': new Date(data.createdAt).toLocaleString('en-IN'),
+  };
+  return fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(payload),
+  })
+    .then((r) => r.json())
+    .catch((err) => ({ success: false, error: String(err) }));
+}
+
+/* Light-first clinical interface: consistent contrast on patient devices. */
+document.documentElement.removeAttribute('data-theme');
+localStorage.removeItem('bcl_theme');
 
 /* ---------- Language switching ---------- */
 function setLang(lang){
@@ -345,6 +364,9 @@ function submitBooking(e, items, total){
   bookings.unshift(data);
   localStorage.setItem('bcl_bookings', JSON.stringify(bookings));
 
+  // Fire off the instant email notification to the lab (non-blocking).
+  sendBookingEmail(data);
+
   const waMsg = encodeURIComponent(
     `New booking request — ${data.id}\nPatient: ${data.name}, ${data.age}, ${data.gender}\nPhone: ${data.phone}\nMode: ${data.mode}\nDate/Slot: ${data.date} ${data.slot}\nTests: ${data.items.join(', ') || 'To be advised'}\nEstimated total: ₹${data.total}\nAddress: ${data.address||'N/A'}\nNotes: ${data.notes||'-'}`
   );
@@ -356,7 +378,7 @@ function submitBooking(e, items, total){
       <p>Your reference ID:</p>
       <p class="confirm-id">${data.id}</p>
       <p style="color:var(--muted);font-size:.88rem;">We'll confirm your slot shortly. You can also send this request directly to our team on WhatsApp so it's actioned faster.</p>
-      <a class="btn btn-primary" style="margin-top:8px;" href="https://wa.me/91XXXXXXXXXX?text=${waMsg}" target="_blank" rel="noopener">Send via WhatsApp</a>
+      <a class="btn btn-primary" style="margin-top:8px;" href="https://wa.me/918437166210?text=${waMsg}" target="_blank" rel="noopener">Send via WhatsApp</a>
       <div style="margin-top:14px;">
         <button class="btn btn-ghost btn-small" onclick="closeModal()">Close</button>
       </div>
@@ -425,6 +447,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
   const closeStaffBtn = document.getElementById('closeStaffBtn');
   if(closeStaffBtn) closeStaffBtn.addEventListener('click', closeStaffView);
+
+  // If the staff view is open and a user clicks any in-page nav link (or the
+  // brand logo), close the staff view first so navigation actually works.
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    if(['staffLink','staffLink2','staffLinkMobile'].includes(a.id)) return;
+    a.addEventListener('click', ()=>{
+      const sv = document.getElementById('staffView');
+      if(sv && sv.classList.contains('open')) closeStaffView();
+      const mobileNav = document.getElementById('mobileNav');
+      if(mobileNav) mobileNav.classList.remove('open');
+    });
+  });
 
   const catalogSearchEl = document.getElementById('catalogSearch');
   if(catalogSearchEl) catalogSearchEl.addEventListener('input', renderCatalog);

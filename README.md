@@ -1,8 +1,8 @@
-# Bali Clinical Laboratory — Website (Static Prototype)
+# Bali Diagnostics — Website
 
 Plain static site. Three files, no build step, no server needed:
 
-- `index.html` — the whole website (home, packages, tests, booking, staff view)
+- `index.html` — the patient website (home, packages, tests and booking)
 - `styles.css` — styling / theme
 - `app.js` — behaviour (booking, language switch, dark mode)
 
